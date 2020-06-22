@@ -28,10 +28,24 @@ namespace COMP123_M2020_Eunbee2
         public GameObject(string name)
         {
             Name = name;
+
+            m_initialize();
         }
 
         //Private Methods
+        private void m_initialize()
+        {
+            Transform = new Transform();
+        }
 
         //public Method
+
+        public override string ToString()
+        {
+            string outputString = "";
+            outputString += $"Name    : {Name}\n";
+            outputString += Transform.ToString();
+            return outputString;
+        }
     }
 }
