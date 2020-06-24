@@ -24,7 +24,7 @@ namespace COMP123_M2020_Eunbee2
 
         public virtual float FireBullet()
         {
-            Console.WriteLine("Firing Bullet!\n");
+            Console.WriteLine($"{Name} Firing Bullet!\n");
             return 20.0f;
         }
 

@@ -23,7 +23,7 @@ namespace COMP123_M2020_Eunbee2
         // virtura was written in enemy FireBullet
         public override float FireBullet()
         {
-            Console.WriteLine("Firing FAT bullet!");
+            Console.WriteLine($"{Name} Firing FAT bullet!");
             return 40.0f;
         }
 

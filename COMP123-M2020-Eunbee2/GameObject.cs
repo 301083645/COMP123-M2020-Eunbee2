@@ -8,7 +8,7 @@ namespace COMP123_M2020_Eunbee2
     {
         // Private Instance Members(fields)
         private string m_name;
-        private float m_health;
+        protected float m_health;
 
         //Public properties
         public Transform Transform{ get; set; }
@@ -25,7 +25,7 @@ namespace COMP123_M2020_Eunbee2
             }
         }
 
-        public float Health
+        public virtual float Health
         {
             get
             {

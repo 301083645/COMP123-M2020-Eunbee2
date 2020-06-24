@@ -10,7 +10,7 @@ namespace COMP123_M2020_Eunbee2
         {
 
 
-            float playerSpeed = 20.0f; // 20 units
+            
             Player player = new Player();
 
             
@@ -19,24 +19,25 @@ namespace COMP123_M2020_Eunbee2
             Console.WriteLine(player.ToString());
             player.RaiseShields();
 
-            
-            player.Transform.position += Vector2D.Right() * playerSpeed;
+            Enemy redEnemy = new Enemy("Red Enemy");
+            redEnemy.Transform.position = new Vector2D(200.0f, 200.0f);
+            Console.WriteLine(redEnemy.ToString());
+
+            float distance = Vector2D.Distance(player.Transform.position, redEnemy.Transform.position);
+            Console.WriteLine($"The distance between the player and the red enemy is {distance}");
+
+            player.Health -= redEnemy.FireBullet();
             Console.WriteLine(player.ToString());
 
-            //player.Transform.position *= playerSpeed;
-            //Console.WriteLine(player.ToString());
+            Boss boss = new Boss();
+            boss.Transform.position = Vector2D.Zero();
+            Console.WriteLine(boss.ToString());
 
-            Vector2D vector1 = new Vector2D(0.0f, 3.0f);
-            Vector2D vector2 = new Vector2D(4.0f, 0.0f);
-            Console.WriteLine("Value of vector1 is: " + vector1.ToString());
-            Console.WriteLine("Value of vector2 is: " + vector2.ToString());
+            float bossdistance = Vector2D.Distance(player.Transform.position, boss.Transform.position);
+            Console.WriteLine($"The distance between the player and the Boss enemy is {bossdistance}");
 
-
-            float dot = Vector2D.Dot(vector1, vector2);
-            Console.WriteLine($"The Dot product is: {dot}");
-
-            float distance = Vector2D.Distance(vector1, vector2);
-            Console.WriteLine($"The Distance between vector1 and vector2 is: {distance}");
+            player.Health -= boss.FireBullet();
+            Console.WriteLine(player.ToString());
 
 
 
