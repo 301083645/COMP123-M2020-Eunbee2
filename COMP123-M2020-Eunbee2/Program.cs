@@ -9,38 +9,21 @@ namespace COMP123_M2020_Eunbee2
         {
 
 
-            //GameObject player = new GameObject("Player");
+            float playerSpeed = 20.0f; // 20 units
             Player player = new Player();
 
-            Enemy greenEnemy = new Enemy("GreenEnemy");
-            Enemy redEnemy = new Enemy("RedEnemy");
-            Boss bossEnemy = new Boss();
-
-            //player.Transform.position = new Vector2D();
-
-            //Console.WriteLine(player.Name);
-            //Console.WriteLine(player.Transform.ToString());
-
+            
             
             player.Transform.position = new Vector2D(100.0f, 100.0f);
             Console.WriteLine(player.ToString());
             player.RaiseShields();
 
-           
-            greenEnemy.Transform.position = new Vector2D(60.0f, 80.0f);
-            Console.WriteLine(greenEnemy.ToString());
-            greenEnemy.FireBullet();
-
-            redEnemy.Transform.position = new Vector2D();
-            Console.WriteLine(redEnemy.ToString());
-            redEnemy.FireBullet();
-
             
-            bossEnemy.Transform.position = new Vector2D(100.0f, 200.0f);
-            Console.WriteLine(bossEnemy.ToString());
-            bossEnemy.FireBullet();
+            player.Transform.position += Vector2D.Left() * playerSpeed;
+            Console.WriteLine(player.ToString());
 
-
+            //player.Transform.position *= playerSpeed;
+            //Console.WriteLine(player.ToString());
 
             //listen for any key
             Console.ReadLine();
