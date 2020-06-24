@@ -8,6 +8,7 @@ namespace COMP123_M2020_Eunbee2
     {
         // Private Instance Members(fields)
         private string m_name;
+        private float m_health;
 
         //Public properties
         public Transform Transform{ get; set; }
@@ -24,10 +25,29 @@ namespace COMP123_M2020_Eunbee2
             }
         }
 
+        public float Health
+        {
+            get
+            {
+                return m_health;
+            }
+            set
+            {
+                m_health = value;
+            }
+        }
+
         // Constructor(s)
-        public GameObject(string name)
+        /// <summary>
+        /// This Constructor requires a name for the game with an optional health value.
+        /// By default all GameObjects will have a health value of 100.0f
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="health"></param>
+        public GameObject(string name, float health = 100.0f)
         {
             Name = name;
+            Health = health;
 
             m_initialize();
         }
@@ -44,6 +64,7 @@ namespace COMP123_M2020_Eunbee2
         {
             string outputString = "";
             outputString += $"Name    : {Name}\n";
+            outputString += $"Health  : {Health}\n";
             outputString += Transform.ToString();
             return outputString;
         }

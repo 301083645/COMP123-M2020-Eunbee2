@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Numerics;
 
 namespace COMP123_M2020_Eunbee2
 {
@@ -101,6 +102,20 @@ namespace COMP123_M2020_Eunbee2
         public static Vector2D Left()
         {
             return new Vector2D(-1.0f, 0.0f);
+        }
+
+        public static float Dot(Vector2D lhs, Vector2D rhs)
+        {
+            return (lhs.x * rhs.x) + (lhs.y * rhs.y);
+        }
+
+        public static float Distance(Vector2D lhs, Vector2D rhs)
+        {
+            float diffXs = (rhs.x - lhs.x);
+            float diffYs = (rhs.y - lhs.y);
+            //return (float) Math.Sqrt(diffXs * diffXs + diffYs * diffYs);
+            return Convert.ToSingle(Math.Sqrt(diffXs * diffXs + diffYs * diffYs));
+
         }
     }
 }

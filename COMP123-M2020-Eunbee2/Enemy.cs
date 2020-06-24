@@ -22,9 +22,10 @@ namespace COMP123_M2020_Eunbee2
 
         // public methods
 
-        public virtual void FireBullet()
+        public virtual float FireBullet()
         {
             Console.WriteLine("Firing Bullet!\n");
+            return 20.0f;
         }
 
     }
