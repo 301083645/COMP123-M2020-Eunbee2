@@ -15,7 +15,8 @@ namespace COMP123_M2020_Eunbee2
         public Enemy(string name)
             : base(name)
         {
-
+            
+            
         }
 
         // Private methods
@@ -27,6 +28,25 @@ namespace COMP123_M2020_Eunbee2
             Console.WriteLine($"{Name} Firing Bullet!\n");
             return 20.0f;
         }
+
+        
+        // public overridden methods (must ovveride)
+        public override void Start()
+        {
+            Console.WriteLine($"{this.GetType()}Start method");
+            Health = 50.0f;
+        }
+
+        public override void Update()
+        {
+
+        }
+
+        public override void Reset()
+        {
+
+        }
+
 
     }
 }

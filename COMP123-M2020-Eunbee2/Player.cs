@@ -75,14 +75,11 @@ namespace COMP123_M2020_Eunbee2
         public Player()
             : base("Player")
         {
-            m_initialize();
+           
         }
 
         // Private methods
-        private void m_initialize()
-        {
-            m_shieldLevel = 10.0f;
-        }
+        
 
         // public methods
         public void RaiseShields()
@@ -96,5 +93,23 @@ namespace COMP123_M2020_Eunbee2
             Console.WriteLine("Lowering Shields\n");
             ShieldsRaised = false;
         }
+
+        public override void Start()
+        {
+            Console.WriteLine($"{this.GetType()}Start method");
+            m_shieldLevel = 10.0f;
+        }
+
+        public override void Update()
+        {
+
+        }
+
+        public override void Reset()
+        {
+
+        }
+
+
     }
 }

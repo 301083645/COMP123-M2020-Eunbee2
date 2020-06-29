@@ -14,7 +14,7 @@ namespace COMP123_M2020_Eunbee2
         public Boss() :
             base("Boss")
         {
-
+           
         }
 
         // private methods
@@ -27,6 +27,22 @@ namespace COMP123_M2020_Eunbee2
             return 40.0f;
         }
 
+        // public overridden methods (May override)
+        public override void Start()
+        {
+            Console.WriteLine($"{this.GetType()}Start method");
+            Health = 200.0f;
+        }
+
+        public override void Update()
+        {
+
+        }
+
+        public override void Reset()
+        {
+
+        }
 
 
 

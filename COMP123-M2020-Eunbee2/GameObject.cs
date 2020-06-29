@@ -4,7 +4,7 @@ using System.Text;
 
 namespace COMP123_M2020_Eunbee2
 {
-    class GameObject
+    abstract class GameObject
     {
         // Private Instance Members(fields)
         private string m_name;
@@ -38,6 +38,9 @@ namespace COMP123_M2020_Eunbee2
         }
 
         // Constructor(s)
+
+
+
         /// <summary>
         /// This Constructor requires a name for the game with an optional health value.
         /// By default all GameObjects will have a health value of 100.0f
@@ -50,6 +53,8 @@ namespace COMP123_M2020_Eunbee2
             Health = health;
 
             m_initialize();
+
+            Start();
         }
 
         //Private Methods
@@ -68,5 +73,12 @@ namespace COMP123_M2020_Eunbee2
             outputString += Transform.ToString();
             return outputString;
         }
+
+        // public abstract methods (Must be OVERRIDDEN in the derived class)
+        public abstract void Start();
+        public abstract void Update();
+        public abstract void Reset();
+
+
     }
 }
