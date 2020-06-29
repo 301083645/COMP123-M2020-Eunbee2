@@ -102,7 +102,7 @@ namespace COMP123_M2020_Eunbee2
 
         public override void Update()
         {
-
+            Console.WriteLine($"{this.GetType()} was Updated");
         }
 
         public override void Reset()

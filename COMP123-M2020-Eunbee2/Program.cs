@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 
@@ -6,13 +7,22 @@ namespace COMP123_M2020_Eunbee2
 {
     class Program
     {
+
+        private static List<GameObject> gameObjects;
+        static void Update()
+        {
+            foreach (GameObject gameObject in gameObjects)
+            {
+                gameObject.Update();
+            }
+        }
         static void Main(string[] args)
         {
 
+            gameObjects = new List<GameObject>();
 
-            
             Player player = new Player();
-
+            gameObjects.Add(player);
             
             
             player.Transform.position = new Vector2D(100.0f, 100.0f);
@@ -20,6 +30,7 @@ namespace COMP123_M2020_Eunbee2
             player.RaiseShields();
 
             Enemy redEnemy = new Enemy("Red Enemy");
+            gameObjects.Add(redEnemy);
             redEnemy.Transform.position = new Vector2D(200.0f, 200.0f);
             Console.WriteLine(redEnemy.ToString());
 
@@ -30,6 +41,7 @@ namespace COMP123_M2020_Eunbee2
             Console.WriteLine(player.ToString());
 
             Boss boss = new Boss();
+            gameObjects.Add(boss);
             boss.Transform.position = Vector2D.Zero();
             Console.WriteLine(boss.ToString());
 
@@ -40,7 +52,7 @@ namespace COMP123_M2020_Eunbee2
             Console.WriteLine(player.ToString());
 
 
-
+            Update();
 
             //listen for any key
             Console.ReadLine();
